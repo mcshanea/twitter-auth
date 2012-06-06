@@ -1,0 +1,16 @@
+<% if @user && 1 == 2 %>
+<% @user.twitter.favorites.each do |fav|
+	m = get_links(fav.text) %>
+	<div>
+
+	<h1><%= link_urls_and_users("@#{fav.user.screen_name}: #{fav.text}").html_safe %></h1>
+
+	<% m.each do |m| %>
+    <%= show_page(m) %>
+<%
+	end %>
+</div>
+	<% end %>
+<% end %>
+
+<%= get_timeline_urls(@user.twitter.home_timeline(:count => 200)) %>

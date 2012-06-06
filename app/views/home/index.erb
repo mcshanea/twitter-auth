@@ -1,0 +1,9 @@
+This is index!
+
+<div>
+
+<% current_user.twitter.home_timeline.each do |tweet| %>
+	<%= tweet.text %> <br />
+<% end unless current_user.nil? %>
+
+</div>
